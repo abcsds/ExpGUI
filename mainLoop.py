@@ -3,10 +3,6 @@
 import os
 import time
 import numpy as np
-import pylsl
-import pickle
-from psychopy import visual, core, event
-from psychtoolbox import PsychHID
 
 # --------------------- Import Functions ----------------------------
 from diary import diary, closeHandlersDiary
@@ -15,7 +11,7 @@ from lsl_Functions import lsl_init, lsl_close
 from timing_Functions import timing_init, timing_check
 from fig_init import fig_init, fig_close
 from fig_update import fig_update
-from saveAndLoadFiles import loadVariables, saveVariables
+from saveAndLoadFiles import saveVariables  # , loadVariables
 
 
 # Function for mainLoop and Trial-Execution
@@ -262,7 +258,7 @@ def loop(
     exitScreen = False
     printMsg = True
 
-    while exitScreen == False:
+    while not exitScreen:
 
         if kb_key_value == "ESCAPE":
 
@@ -334,10 +330,10 @@ def loop(
 
 # Load variables from pkl-file
 # timing_tStart,timing_trialTimings, \
-#                   timing_trialSequence, timing_taskOnset, timing_nTrials, \
-#                   timing_nStates, subject_like_dislike, RUN_TYPE, RUN_NR, \
-#                   nTrialMax, measCount,loop_not_stop, loop_newTrial, loop_newState, \
-#                   loop_measure_speed, loop_lastTrial, loop_id, loop_fileName, \
-#                   loop_feedback, loop_cTrial, loop_cState,loop_cRun, loop_cLoop, \
-#                   loop_cLinState, kb_read_last,  kb_read_interval, kb_key_value, \
-#                   kb_key_new, feedback_update, exitScreen = loadVariables(loop_fileName)
+#         timing_trialSequence, timing_taskOnset, timing_nTrials, \
+#         timing_nStates, subject_like_dislike, RUN_TYPE, RUN_NR, \
+#         nTrialMax, measCount,loop_not_stop, loop_newTrial, loop_newState, \
+#         loop_measure_speed, loop_lastTrial, loop_id, loop_fileName, \
+#         loop_feedback, loop_cTrial, loop_cState,loop_cRun, loop_cLoop, \
+#         loop_cLinState, kb_read_last,  kb_read_interval, kb_key_value, \
+#         kb_key_new, feedback_update, exitScreen = loadVariables(loop_fileName)

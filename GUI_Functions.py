@@ -76,9 +76,10 @@ def runFile(
     startLoop = True
 
     if runType == "Custom":
-        if trialNr == "0" or cueLen == "0" or condNr == "0" or nMaxConsecTrials == "0":
+        if any(i == "0" for i in (trialNr, cueLen, condNr, nMaxConsecTrials)):
             print(
-                "Set: Nr of Conditions, Nr of Trials/Cond, Task Length, Consecutive Trials "
+                "Set: Nr of Conditions, Nr of Trials/Cond,"
+                " Task Length, Consecutive Trials "
             )
             startLoop = False
         else:

@@ -252,7 +252,8 @@ def timing_init(
 
         if nLoop > 1000:
             print(
-                "!!! Error: Was not able to create a suitable trial sequence within 1000 attempts !!!"
+                "!!! Error: Was not able to create"
+                " a suitable trial sequence within 1000 attempts !!!"
             )
             break
 

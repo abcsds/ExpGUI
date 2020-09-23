@@ -1,4 +1,4 @@
-from psychopy import visual, core, monitors
+from psychopy import visual, monitors
 import os
 
 # ------------------------------------------

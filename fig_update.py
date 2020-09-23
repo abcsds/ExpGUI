@@ -1,12 +1,13 @@
 #
 # -------------------------- Figure Update ----------------------------------
 #
-from psychopy import visual, core, event
-import time
+from psychopy import visual, core
 
 # ------------------------------------------
 #     Black Screen Setting
 # ------------------------------------------
+
+
 def setScreenBlack(win, blackScreenTime):
     win.color = "black"
     win.flip(clearBuffer=True)
