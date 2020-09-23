@@ -4,15 +4,16 @@
 
 import logging
 
+
 def diary(filename):
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    
+
     # Reset logger handlers, otherwise it will be written
     # several times into file/console
     if logger.handlers:
         logger.handlers = []
-        
+
     fileHandler = logging.FileHandler(filename)
     consoleHandler = logging.StreamHandler()
     logger.addHandler(consoleHandler)
@@ -21,6 +22,7 @@ def diary(filename):
     logger.addHandler(fileHandler)
 
     return logger, fileHandler, consoleHandler
+
 
 def closeHandlersDiary(fileHandler, consoleHandler):
     fileHandler.close()
